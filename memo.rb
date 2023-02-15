@@ -8,7 +8,7 @@ memo_type = gets.to_i # ユーザーの入力値を取得し、数字へ変換�
 # 「memo_type」の値（1 or 2）によって処理を分岐させていきましょう。
 if memo_type == 1
   puts "拡張子を除いたファイル名を入力してください。"
-  file_name_new = gets
+  file_name_new = gets.chomp.to_s
   puts "メモしたい内容を入力してください。"
   puts "完了したら改行して「Ctrl＋D」を入力してください。"
   CSV.open("#{file_name_new}.csv","w") do |contents_new|
@@ -18,7 +18,7 @@ end
 elsif memo_type == 2
   puts "編集したいファイル名を拡張子を除いて入力してください。"
   puts "入力したファイル名が見つからない場合は新規でファイルを作成します。"
-  file_name_edit = gets
+  file_name_edit = gets.chomp.to_s
   puts "追記したい内容を入力してください。"
   puts "完了したら改行して「Ctrl＋D」を入力してください。"
   CSV.open("#{file_name_edit}.csv","a") do |contents_edit|
