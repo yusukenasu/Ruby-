@@ -12,9 +12,9 @@ if memo_type == 1
   puts "メモしたい内容を入力してください。"
   puts "完了したら改行して「Ctrl＋D」を入力してください。"
   CSV.open("#{file_name_new}.csv","w") do |contents_new|
-  new_memo_contents = readlines
-  contents_new << new_memo_contents
-end
+    new_memo_contents = readlines
+    contents_new << new_memo_contents
+  end
 elsif memo_type == 2
   puts "編集したいファイル名を拡張子を除いて入力してください。"
   puts "入力したファイル名が見つからない場合は新規でファイルを作成します。"
@@ -22,7 +22,7 @@ elsif memo_type == 2
   puts "追記したい内容を入力してください。"
   puts "完了したら改行して「Ctrl＋D」を入力してください。"
   CSV.open("#{file_name_edit}.csv","a") do |contents_edit|
-  edit_memo_contents = readlines
-  contents_edit << edit_memo_contents
-end
+    edit_memo_contents = readlines
+    contents_edit << edit_memo_contents
+  end
 end
